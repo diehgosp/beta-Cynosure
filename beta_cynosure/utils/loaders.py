@@ -33,3 +33,11 @@ def load_itr_year(year: int) -> pd.DataFrame:
     for df in dfs:
         df['YEAR'] = year
     return pd.concat(dfs, ignore_index=True)
+
+def load_fre_year(year: int) -> pd.DataFrame:
+    url = f"https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/FRE/DADOS/fre_cia_aberta_{year}.zip"
+    zip_file = download_zip(url)
+    dfs = load_csvs_from_zip(zip_file, consolidated_only=True)
+    for df in dfs:
+        df['YEAR'] = year
+    return pd.concat(dfs, ignore_index=True)
