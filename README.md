@@ -24,6 +24,10 @@ Número de ações em circulação
 Instale e use o comando b-cynosure acompanhado do ano de início - ano fim do período, para baixar os demonstrativos de todas as empresas no período.
 
 ```
+pip install beta-cynosure==0.1.2
+```
+
+```
 b-cynosure 2020-2024
 ```
 
